@@ -1,0 +1,12 @@
+# robots.txt for electdustyndorn.com
+# Dustyn Dorn for PA House District 60 Campaign Website
+
+# Allow all search engines to crawl the entire site
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://electdustyndorn.com/sitemap.xml
+
+# Crawl-delay for polite crawling (optional)
+Crawl-delay: 1
