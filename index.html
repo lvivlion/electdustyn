@@ -58,10 +58,7 @@
 </head>
 
 <body>
-    <!-- Under Construction Banner -->
-    <div class="construction-banner">
-        <span>🚧 Site Under Construction — Full Launch Coming Soon! 🚧</span>
-    </div>
+
 
     <!-- Header -->
     <header class="header" role="banner">
@@ -115,8 +112,8 @@
             <div class="hero-inner">
                 <div class="hero-content">
                     <!-- PA State Flag -->
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23002D72' width='1200' height='800'/%3E%3Cg transform='translate(600,400)'%3E%3Ccircle fill='%23FFCD00' r='200' opacity='0.3'/%3E%3Cpath d='M0-180 L15-60 L130-90 L45-15 L90 100 L0 40 L-90 100 L-45-15 L-130-90 L-15-60 Z' fill='%23FFCD00' opacity='0.6'/%3E%3Ctext y='20' text-anchor='middle' font-size='50' fill='white' font-family='serif' font-weight='bold'%3EPA%3C/text%3E%3C/g%3E%3C/svg%3E"
-                        alt="Commonwealth of Pennsylvania" class="hero-flag" width="90" height="60">
+                    <img src="img/pennsylvania-flag.png" alt="Commonwealth of Pennsylvania" class="hero-flag" width="90"
+                        height="60">
 
                     <span class="hero-badge">🔵 Democrat • District 60</span>
 
@@ -378,11 +375,22 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 Dustyn Dorn for PA House District 60. All rights reserved.</p>
+                <p>&copy; 2026. Made in Pittsburgh by <a href="https://ost4p.com/website" target="_blank" rel="noopener"
+                        style="color: var(--pa-gold); font-weight: 600;">OL Web Solutions</a></p>
                 <p class="disclaimer">Paid for by Dustyn Dorn for Pennsylvania</p>
             </div>
         </div>
     </footer>
+
+    <!-- Construction Modal -->
+    <div id="construction-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-icon">🚧</div>
+            <h3>Site Under Construction</h3>
+            <p>Full Launch Coming Soon! We're hard at work building a better Pennsylvania together.</p>
+            <button id="modal-ok-btn" class="btn btn-primary">OK</button>
+        </div>
+    </div>
 
     <!-- JavaScript -->
     <script src="script.js"></script>

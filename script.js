@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initScrollHeader();
     initAnimations();
+    initModal();
 });
 
 // Countdown Timer
@@ -31,7 +32,7 @@ function initCountdown() {
 
 function updateCountdown() {
     const now = new Date();
-    
+
     // Primary countdown
     const primaryDiff = PRIMARY_DATE - now;
     if (primaryDiff > 0) {
@@ -39,7 +40,7 @@ function updateCountdown() {
     } else {
         showPastElection('primary');
     }
-    
+
     // General countdown
     const generalDiff = GENERAL_DATE - now;
     if (generalDiff > 0) {
@@ -54,12 +55,12 @@ function updateCountdownDisplay(type, diff) {
     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-    
+
     const daysEl = document.getElementById(`${type}-days`);
     const hoursEl = document.getElementById(`${type}-hours`);
     const minutesEl = document.getElementById(`${type}-minutes`);
     const secondsEl = document.getElementById(`${type}-seconds`);
-    
+
     if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
     if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
     if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
@@ -78,15 +79,15 @@ function initMobileMenu() {
     if (mobileMenuBtn) {
         mobileMenuBtn.addEventListener('click', openMobileMenu);
     }
-    
+
     if (mobileMenuClose) {
         mobileMenuClose.addEventListener('click', closeMobileMenu);
     }
-    
+
     if (mobileMenuOverlay) {
         mobileMenuOverlay.addEventListener('click', closeMobileMenu);
     }
-    
+
     // Close menu when clicking links
     const mobileLinks = document.querySelectorAll('.mobile-menu a');
     mobileLinks.forEach(link => {
@@ -109,18 +110,18 @@ function closeMobileMenu() {
 // Smooth Scroll
 function initSmoothScroll() {
     const links = document.querySelectorAll('a[href^="#"]');
-    
+
     links.forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
             if (href === '#') return;
-            
+
             const target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
                 const headerHeight = header.offsetHeight;
                 const targetPosition = target.offsetTop - headerHeight;
-                
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
@@ -133,16 +134,16 @@ function initSmoothScroll() {
 // Header Scroll Effect
 function initScrollHeader() {
     let lastScroll = 0;
-    
+
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
-        
+
         if (currentScroll > 100) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
-        
+
         lastScroll = currentScroll;
     });
 }
@@ -150,7 +151,7 @@ function initScrollHeader() {
 // Scroll Animations using Intersection Observer
 function initAnimations() {
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
-    
+
     if ('IntersectionObserver' in window) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -163,11 +164,36 @@ function initAnimations() {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         });
-        
+
         animatedElements.forEach(el => observer.observe(el));
     } else {
         // Fallback for older browsers
         animatedElements.forEach(el => el.classList.add('animate-fadeInUp'));
+    }
+}
+
+// Construction Modal
+function initModal() {
+    const modal = document.getElementById('construction-modal');
+    const okBtn = document.getElementById('modal-ok-btn');
+
+    if (modal && okBtn) {
+        // Show modal on load
+        setTimeout(() => {
+            modal.classList.add('active');
+        }, 500);
+
+        // Close modal
+        okBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        // Close on overlay click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
     }
 }
 
