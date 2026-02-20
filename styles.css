@@ -690,7 +690,7 @@ p {
 /* Countdown Mini embedded in election info */
 .countdown-mini {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-sm);
     margin-top: var(--space-xl);
     padding-top: var(--space-lg);
