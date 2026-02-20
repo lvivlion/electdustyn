@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initScrollHeader();
     initAnimations();
-    initModal();
 });
 
 // Countdown Timer
@@ -172,30 +171,7 @@ function initAnimations() {
     }
 }
 
-// Construction Modal
-function initModal() {
-    const modal = document.getElementById('construction-modal');
-    const okBtn = document.getElementById('modal-ok-btn');
 
-    if (modal && okBtn) {
-        // Show modal on load
-        setTimeout(() => {
-            modal.classList.add('active');
-        }, 500);
-
-        // Close modal
-        okBtn.addEventListener('click', () => {
-            modal.classList.remove('active');
-        });
-
-        // Close on overlay click
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-            }
-        });
-    }
-}
 
 // Utility function for form validation (if forms are added later)
 function validateEmail(email) {
