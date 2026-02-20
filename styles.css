@@ -369,7 +369,7 @@ p {
     gap: var(--space-xl);
 }
 
-.nav-desktop a {
+.nav-desktop a:not(.btn) {
     color: rgba(255, 255, 255, 0.85);
     font-weight: 500;
     position: relative;
@@ -690,7 +690,7 @@ p {
 /* Countdown Mini embedded in election info */
 .countdown-mini {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--space-sm);
     margin-top: var(--space-xl);
     padding-top: var(--space-lg);
@@ -974,6 +974,16 @@ p {
     gap: var(--space-xl);
 }
 
+.dates-grid.single-date {
+    display: flex;
+    justify-content: center;
+}
+
+.dates-grid.single-date .date-card {
+    max-width: 600px;
+    width: 100%;
+}
+
 .date-card {
     background: var(--gradient-card);
     border-radius: var(--radius-2xl);
@@ -1245,7 +1255,7 @@ p {
 }
 
 @media (min-width: 640px) {
-    .dates-grid {
+    .dates-grid:not(.single-date) {
         grid-template-columns: repeat(2, 1fr);
     }
 }

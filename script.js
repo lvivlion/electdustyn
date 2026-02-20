@@ -39,28 +39,23 @@ function updateCountdown() {
     } else {
         showPastElection('primary');
     }
-
-    // General countdown
-    const generalDiff = GENERAL_DATE - now;
-    if (generalDiff > 0) {
-        updateCountdownDisplay('general', generalDiff);
-    } else {
-        showPastElection('general');
-    }
 }
 
 function updateCountdownDisplay(type, diff) {
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
     const daysEl = document.getElementById(`${type}-days`);
     const hoursEl = document.getElementById(`${type}-hours`);
     const minutesEl = document.getElementById(`${type}-minutes`);
+    const secondsEl = document.getElementById(`${type}-seconds`);
 
     if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
     if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
     if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
+    if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
 }
 
 function showPastElection(type) {
