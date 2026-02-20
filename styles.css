@@ -490,11 +490,11 @@ p {
     display: flex;
     align-items: center;
     background: linear-gradient(135deg, rgba(0, 26, 69, 0.85) 0%, rgba(0, 45, 114, 0.8) 30%, rgba(0, 71, 171, 0.75) 70%, rgba(30, 58, 138, 0.85) 100%), url('img/capitol%20image.jpg') center/cover;
-    background-attachment: fixed;
+    background-attachment: scroll;
     position: relative;
     overflow: hidden;
-    padding-top: 120px;
-    padding-bottom: var(--space-4xl);
+    padding-top: 100px;
+    padding-bottom: var(--space-2xl);
 }
 
 /* Animated background elements */
@@ -644,10 +644,10 @@ p {
 
 .hero-subtitle {
     color: rgba(255, 255, 255, 0.9);
-    font-size: 1.25rem;
+    font-size: 1.05rem;
     max-width: 650px;
-    margin: 0 auto var(--space-2xl);
-    line-height: 1.8;
+    margin: 0 auto var(--space-lg);
+    line-height: 1.7;
     animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
@@ -667,7 +667,7 @@ p {
 
 .hero-image-wrapper {
     position: relative;
-    max-width: 420px;
+    max-width: 280px;
 }
 
 .hero-image-wrapper::before {
@@ -860,7 +860,7 @@ p {
 }
 
 .stat-number {
-    font-size: 3rem;
+    font-size: 1.75rem;
     font-weight: 800;
     background: var(--gradient-hero);
     -webkit-background-clip: text;
@@ -1026,7 +1026,7 @@ p {
 }
 
 .date-value {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     font-weight: 800;
     background: var(--gradient-hero);
     -webkit-background-clip: text;
@@ -1142,6 +1142,108 @@ p {
 }
 
 /* Responsive Design */
+
+/* Small phones */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--space-md);
+    }
+
+    .hero {
+        padding-top: 80px;
+        padding-bottom: var(--space-xl);
+        min-height: auto;
+    }
+
+    .hero-badge {
+        font-size: 0.75rem;
+        padding: var(--space-xs) var(--space-md);
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .hero-image-wrapper {
+        max-width: 220px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 260px;
+    }
+
+    .about {
+        padding: var(--space-2xl) 0;
+    }
+
+    .about-image-wrapper {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .about-content h3 {
+        font-size: 1.35rem;
+    }
+
+    .about-content p {
+        font-size: 0.95rem;
+    }
+
+    .stat-item {
+        padding: var(--space-md);
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .issues {
+        padding: var(--space-2xl) 0;
+    }
+
+    .issue-card {
+        padding: var(--space-lg);
+    }
+
+    .issue-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 1.4rem;
+    }
+
+    .date-card {
+        padding: var(--space-xl);
+    }
+
+    .date-value {
+        font-size: 1.4rem;
+    }
+
+    .countdown-box .number {
+        font-size: 1.1rem;
+    }
+
+    .countdown-box .label {
+        font-size: 0.55rem;
+    }
+
+    .contact-campaign .btn {
+        font-size: 1rem !important;
+        padding: var(--space-md) var(--space-xl) !important;
+        word-break: break-all;
+    }
+
+    .section-header {
+        margin-bottom: var(--space-xl);
+    }
+}
+
 @media (min-width: 640px) {
     .dates-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1159,6 +1261,9 @@ p {
 
     .hero {
         padding-top: 100px;
+        padding-bottom: var(--space-4xl);
+        min-height: 100vh;
+        background-attachment: fixed;
     }
 
     .hero-inner {
@@ -1175,7 +1280,13 @@ p {
     }
 
     .hero-subtitle {
+        font-size: 1.25rem;
         margin: 0 0 var(--space-2xl);
+        line-height: 1.8;
+    }
+
+    .hero-image-wrapper {
+        max-width: 420px;
     }
 
     .hero-buttons {
@@ -1188,6 +1299,14 @@ p {
 
     .issues-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-number {
+        font-size: 3rem;
+    }
+
+    .date-value {
+        font-size: 2.5rem;
     }
 
     .footer-grid {
