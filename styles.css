@@ -968,6 +968,84 @@ p {
     background: var(--white);
 }
 
+/* Support Section */
+.donate {
+    padding: var(--space-4xl) 0;
+    background: var(--gray-50);
+    position: relative;
+}
+
+.donate::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gray-200), transparent);
+}
+
+.donate-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+}
+
+.donate-card {
+    background: var(--white);
+    padding: var(--space-3xl);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--gray-100);
+    text-align: center;
+    transition: all var(--transition-base);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.donate-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-2xl);
+}
+
+.donate-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-lg);
+}
+
+.donate-card h3 {
+    color: var(--pa-blue);
+    margin-bottom: var(--space-md);
+    font-size: 1.5rem;
+}
+
+.donate-card p {
+    color: var(--gray-600);
+    margin-bottom: var(--space-xl);
+    max-width: 400px;
+}
+
+.address-box {
+    margin-top: var(--space-md);
+    padding: var(--space-xl);
+    background: var(--gray-50);
+    border-radius: var(--radius-lg);
+    border: 2px dashed var(--pa-blue);
+    width: 100%;
+    max-width: 400px;
+}
+
+.address-box p {
+    margin-bottom: var(--space-xs);
+    color: var(--gray-800);
+    max-width: none;
+}
+
+.address-box p:last-child {
+    margin-bottom: 0;
+}
+
 .dates-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -1313,6 +1391,10 @@ p {
 
     .stat-number {
         font-size: 3rem;
+    }
+
+    .donate-grid {
+        grid-template-columns: 1fr 1fr;
     }
 
     .date-value {
