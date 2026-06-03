@@ -697,7 +697,7 @@ p {
     border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.date-card.primary .countdown-mini {
+.date-card.general .countdown-mini {
     border-top-color: rgba(0, 45, 114, 0.1);
 }
 
@@ -710,17 +710,17 @@ p {
     border: 1px solid var(--gray-100);
 }
 
-.date-card.primary .countdown-box {
+.date-card.general .countdown-box {
     background: var(--pa-blue);
     color: var(--white);
     border-color: rgba(255, 255, 255, 0.1);
 }
 
-.date-card.primary .countdown-box .number {
+.date-card.general .countdown-box .number {
     color: var(--white);
 }
 
-.date-card.primary .countdown-box .label {
+.date-card.general .countdown-box .label {
     color: rgba(255, 255, 255, 0.8);
 }
 
@@ -1089,7 +1089,7 @@ p {
     background: var(--gradient-gold);
 }
 
-.date-card.primary::before {
+.date-card.general::before {
     background: var(--gradient-hero);
 }
 
@@ -1107,7 +1107,7 @@ p {
     box-shadow: var(--shadow-md), var(--shadow-blue);
 }
 
-.date-card.primary .date-label {
+.date-card.general .date-label {
     background: var(--gradient-gold);
     color: var(--pa-blue-dark);
     box-shadow: var(--shadow-md), var(--shadow-gold);
@@ -1313,12 +1313,23 @@ p {
         font-size: 1.4rem;
     }
 
+    .countdown-mini {
+        gap: 6px;
+        padding-top: var(--space-md);
+        margin-top: var(--space-md);
+    }
+
+    .countdown-box {
+        padding: var(--space-sm) 2px;
+    }
+
     .countdown-box .number {
         font-size: 1.1rem;
+        margin-bottom: 2px;
     }
 
     .countdown-box .label {
-        font-size: 0.55rem;
+        font-size: 0.52rem;
     }
 
     .contact-campaign .btn {

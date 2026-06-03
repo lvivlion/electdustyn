@@ -3,9 +3,9 @@
    Election Countdown & Interactivity
    ================================ */
 
-// Election Dates
-const PRIMARY_DATE = new Date('2026-05-19T00:00:00');
-const GENERAL_DATE = new Date('2026-11-03T00:00:00');
+// Election Dates (Numeric parameters to ensure cross-browser compatibility on iOS/mobile)
+const PRIMARY_DATE = new Date(2026, 4, 19, 0, 0, 0); // May 19, 2026
+const GENERAL_DATE = new Date(2026, 10, 3, 0, 0, 0); // November 3, 2026
 
 // DOM Elements
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -32,12 +32,12 @@ function initCountdown() {
 function updateCountdown() {
     const now = new Date();
 
-    // Primary countdown
-    const primaryDiff = PRIMARY_DATE - now;
-    if (primaryDiff > 0) {
-        updateCountdownDisplay('primary', primaryDiff);
+    // General countdown (Main Election)
+    const generalDiff = GENERAL_DATE - now;
+    if (generalDiff > 0) {
+        updateCountdownDisplay('general', generalDiff);
     } else {
-        showPastElection('primary');
+        showPastElection('general');
     }
 }
 
