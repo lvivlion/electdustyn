@@ -534,48 +534,6 @@ p {
     }
 }
 
-/* Floating shapes */
-.hero-shapes {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    pointer-events: none;
-}
-
-.hero-shapes span {
-    position: absolute;
-    background: rgba(255, 205, 0, 0.05);
-    border-radius: var(--radius-2xl);
-}
-
-.hero-shapes span:nth-child(1) {
-    width: 300px;
-    height: 300px;
-    top: 10%;
-    left: 5%;
-    animation: float 20s ease-in-out infinite;
-}
-
-.hero-shapes span:nth-child(2) {
-    width: 200px;
-    height: 200px;
-    bottom: 20%;
-    right: 10%;
-    animation: float 15s ease-in-out infinite reverse;
-}
-
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    50% {
-        transform: translateY(-30px) rotate(5deg);
-    }
-}
-
 .hero-inner {
     display: grid;
     grid-template-columns: 1fr;
