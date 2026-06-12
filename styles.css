@@ -953,13 +953,107 @@ p {
 
 .issue-card p {
     color: var(--gray-600);
-    margin-bottom: 0;
+    margin-bottom: var(--space-md);
     line-height: 1.8;
 }
 
-/* Contact Campaign Section */
-.contact-campaign {
+.issue-card p:last-child {
+    margin-bottom: 0;
+}
+
+.issue-list {
+    margin-top: var(--space-md);
+    padding-left: 0;
+    list-style: none;
+    text-align: left;
+}
+
+.issue-list li {
+    position: relative;
+    padding-left: var(--space-xl);
+    margin-bottom: var(--space-sm);
+    color: var(--gray-600);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.issue-list li:last-child {
+    margin-bottom: 0;
+}
+
+.issue-list li::before {
+    content: "•";
+    position: absolute;
+    left: var(--space-xs);
+    color: var(--pa-gold-dark);
+    font-weight: bold;
+    font-size: 1.25rem;
+    line-height: 1;
+    top: 2px;
+}
+
+/* Join the Campaign Section */
+.join-campaign {
+    padding: var(--space-4xl) 0;
     background: var(--gray-50);
+    text-align: center;
+}
+
+.join-card {
+    background: var(--white);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--space-3xl) var(--space-2xl);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--gray-100);
+}
+
+.join-card h3 {
+    color: var(--pa-blue);
+    font-size: 1.75rem;
+    margin-bottom: var(--space-md);
+    font-family: var(--font-display);
+    font-weight: 700;
+}
+
+.join-card p {
+    color: var(--gray-600);
+    max-width: 600px;
+    margin: 0 auto var(--space-xl) auto;
+    line-height: 1.6;
+}
+
+.volunteer-roles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-2xl);
+}
+
+.role-tag {
+    background: var(--gray-50);
+    color: var(--pa-blue);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--gray-200);
+    transition: all var(--transition-base);
+    cursor: default;
+}
+
+.role-tag:hover {
+    background: var(--pa-gold-soft);
+    border-color: var(--pa-gold);
+    color: var(--pa-blue-dark);
+    transform: translateY(-2px);
+}
+
+.join-cta .btn {
+    font-size: 1.1rem;
+    padding: var(--space-lg) var(--space-3xl);
 }
 
 /* Election Info */
@@ -971,7 +1065,7 @@ p {
 /* Support Section */
 .donate {
     padding: var(--space-4xl) 0;
-    background: var(--gray-50);
+    background: var(--white);
     position: relative;
 }
 
@@ -1228,6 +1322,74 @@ p {
     opacity: 1;
     transform: translateY(0);
 }
+/* Community Gallery Section */
+.community {
+    padding: var(--space-4xl) 0;
+    background: var(--white);
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-item:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-xl);
+}
+
+.gallery-image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 125%; /* 4:5 Aspect Ratio */
+    overflow: hidden;
+}
+
+.gallery-image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-base);
+}
+
+.gallery-item:hover .gallery-image-wrapper img {
+    transform: scale(1.05);
+}
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.1) 60%, transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: var(--space-xl) var(--space-md);
+}
+
+.gallery-caption {
+    color: var(--white);
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-align: center;
+    font-family: var(--font-primary);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
 
 /* Responsive Design */
 
@@ -1332,7 +1494,7 @@ p {
         font-size: 0.52rem;
     }
 
-    .contact-campaign .btn {
+    .join-campaign .btn {
         font-size: 1rem !important;
         padding: var(--space-md) var(--space-xl) !important;
         word-break: break-all;
@@ -1400,6 +1562,10 @@ p {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     .stat-number {
         font-size: 3rem;
     }
@@ -1421,7 +1587,7 @@ p {
 
 @media (min-width: 1024px) {
     .issues-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .countdown-box .number {
