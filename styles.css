@@ -396,6 +396,29 @@ p {
     width: 100%;
 }
 
+.nav-desktop a.social-link::after {
+    display: none;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition-fast) !important;
+}
+
+.social-link:hover {
+    transform: scale(1.1);
+}
+
+.social-link svg {
+    transition: color var(--transition-fast);
+}
+
+.social-link:hover svg {
+    color: var(--pa-gold);
+}
+
 .mobile-menu-btn {
     display: flex;
     flex-direction: column;
