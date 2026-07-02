@@ -419,6 +419,18 @@ p {
     color: var(--pa-gold);
 }
 
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.header-fb-mobile {
+    display: inline-flex;
+    color: rgba(255, 255, 255, 0.85);
+    padding: var(--space-sm);
+}
+
 .mobile-menu-btn {
     display: flex;
     flex-direction: column;
@@ -1497,6 +1509,10 @@ p {
 }
 
 @media (min-width: 768px) {
+    .header-actions {
+        display: none;
+    }
+
     .nav-desktop {
         display: block;
     }
