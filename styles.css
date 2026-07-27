@@ -1046,15 +1046,18 @@ p {
 
 .join-cta {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
 }
 
-.join-cta .btn {
-    font-size: 1.05rem;
-    padding: var(--space-md) var(--space-xl);
+.join-cta .btn-volunteer {
+    font-size: 1.1rem;
+    padding: var(--space-lg) var(--space-2xl);
+    width: 100%;
+    max-width: 480px;
+    justify-content: center;
+    box-shadow: var(--shadow-lg), var(--shadow-gold);
 }
 
 /* Election Info */
@@ -1613,11 +1616,11 @@ p {
    High-Contrast Email & Contact UX Components
    ========================================== */
 .email-contact-box {
-    margin-top: var(--space-2xl);
-    padding: var(--space-xl) var(--space-2xl);
-    background: linear-gradient(135deg, var(--pa-blue-dark) 0%, var(--pa-blue) 100%);
+    margin-top: var(--space-xl);
+    padding: var(--space-xl);
+    background: linear-gradient(135deg, #001A45 0%, #002D72 100%);
     border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-lg), 0 8px 30px rgba(0, 45, 114, 0.2);
+    box-shadow: var(--shadow-lg), 0 8px 30px rgba(0, 45, 114, 0.25);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1625,12 +1628,23 @@ p {
     gap: var(--space-xs);
     border: 2px solid var(--pa-gold);
     text-align: center;
+    clear: both;
     transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
 .email-contact-box:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-xl), 0 12px 40px rgba(255, 205, 0, 0.3);
+}
+
+.email-contact-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.email-contact-icon {
+    font-size: 1.1rem;
 }
 
 .email-contact-badge {
@@ -1642,25 +1656,29 @@ p {
 }
 
 .email-contact-address {
-    color: var(--white) !important;
-    font-size: 1.4rem;
+    color: #ffffff !important;
+    font-size: 1.35rem;
     font-weight: 800;
     letter-spacing: -0.01em;
     text-decoration: underline;
     text-decoration-color: var(--pa-gold);
-    text-underline-offset: 5px;
-    transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
+    text-underline-offset: 4px;
+    transition: color var(--transition-fast);
     word-break: break-all;
+    display: inline-block;
+    margin: var(--space-xs) 0 !important;
 }
 
 .email-contact-address:hover {
     color: var(--pa-gold) !important;
 }
 
-.email-contact-subtext {
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 0.9rem;
-    margin-top: var(--space-xs);
+.email-contact-box p.email-contact-desc {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-size: 0.9rem !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    line-height: 1.4 !important;
 }
 
 .footer-email-highlight {
