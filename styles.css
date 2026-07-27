@@ -1044,9 +1044,17 @@ p {
     transform: translateY(-2px);
 }
 
+.join-cta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-md);
+}
+
 .join-cta .btn {
-    font-size: 1.1rem;
-    padding: var(--space-lg) var(--space-3xl);
+    font-size: 1.05rem;
+    padding: var(--space-md) var(--space-xl);
 }
 
 /* Election Info */
