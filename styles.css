@@ -1560,16 +1560,6 @@ p {
     margin-bottom: var(--space-xs);
 }
 
-.endorsement-info h4 a {
-    color: var(--pa-blue);
-    transition: color var(--transition-fast);
-}
-
-.endorsement-info h4 a:hover {
-    color: var(--pa-blue-vivid);
-    text-decoration: underline;
-}
-
 .endorsement-info p {
     color: var(--gray-600);
     font-size: 0.98rem;
