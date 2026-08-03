@@ -23,7 +23,15 @@
     <!-- Issues Section -->
     <url>
         <loc>https://electdustyndorn.com/#issues</loc>
-        <lastmod>2026-01-06</lastmod>
+        <lastmod>2026-08-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Endorsements Section -->
+    <url>
+        <loc>https://electdustyndorn.com/#endorsements</loc>
+        <lastmod>2026-08-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>

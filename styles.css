@@ -1399,6 +1399,183 @@ p {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
+/* Endorsements Section */
+.endorsements {
+    padding: var(--space-4xl) 0;
+    background: linear-gradient(180deg, var(--white) 0%, var(--gray-50) 100%);
+    position: relative;
+}
+
+.endorsements::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gray-200), transparent);
+}
+
+.category-header-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-2xl);
+}
+
+.category-title {
+    color: var(--pa-blue);
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    position: relative;
+    padding: 0 var(--space-md);
+}
+
+.category-divider {
+    height: 2px;
+    flex: 1;
+    max-width: 150px;
+    background: linear-gradient(90deg, transparent, var(--pa-gold), transparent);
+}
+
+.category-divider:first-child {
+    background: linear-gradient(90deg, transparent, var(--pa-gold));
+}
+
+.category-divider:last-child {
+    background: linear-gradient(90deg, var(--pa-gold), transparent);
+}
+
+.endorsements-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-xl);
+}
+
+.endorsement-card {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--gray-100);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 380px;
+}
+
+.endorsement-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-gold);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform var(--transition-base);
+}
+
+.endorsement-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-2xl);
+    border-color: var(--gray-200);
+}
+
+.endorsement-card:hover::before {
+    transform: scaleX(1);
+}
+
+.endorsement-logo-container {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-lg);
+    padding: var(--space-lg);
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--gray-200);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+}
+
+.endorsement-card:hover .endorsement-logo-container {
+    box-shadow: var(--shadow-md);
+    border-color: var(--pa-gold-dark);
+}
+
+.endorsement-logo-container img {
+    max-height: 110px;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform var(--transition-base);
+}
+
+.endorsement-card:hover .endorsement-logo-container img {
+    transform: scale(1.06);
+}
+
+.endorsement-badge {
+    display: inline-block;
+    padding: 5px 16px;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: var(--space-sm);
+}
+
+.endorsement-badge.labor {
+    background: rgba(0, 45, 114, 0.08);
+    color: var(--pa-blue);
+    border: 1px solid rgba(0, 45, 114, 0.2);
+}
+
+.endorsement-badge.environment {
+    background: rgba(16, 185, 129, 0.08);
+    color: #047857;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.endorsement-info h4 {
+    color: var(--pa-blue);
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: var(--space-xs);
+}
+
+.endorsement-info h4 a {
+    color: var(--pa-blue);
+    transition: color var(--transition-fast);
+}
+
+.endorsement-info h4 a:hover {
+    color: var(--pa-blue-vivid);
+    text-decoration: underline;
+}
+
+.endorsement-info p {
+    color: var(--gray-600);
+    font-size: 0.98rem;
+    line-height: 1.6;
+}
+
 /* Responsive Design */
 
 /* Small phones */
